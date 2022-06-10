@@ -38,10 +38,10 @@
         compartment_id: "ocid1.tenancy.oc1..aaaaaaaavckgsm4vr3ydgjl27kccvhq5umrx5juhtvppoidxt3j3yenpgtta"
         shape: "VM.Standard2.1"
         image_id: "ocid1.image.oc1.ap-mumbai-1.aaaaaaaaxivrzw4hhlpnq6jovofqqatez2oztq5zybpobypwivusbycextcq"
-        name: test_instance
+        name: test_instance1
         create_vnic_details:
               assign_public_ip: True
-              hostname_label: "test_instance"
+              hostname_label: "test_instance1"
               subnet_id: "ocid1.subnet.oc1.ap-mumbai-1.aaaaaaaagm6mo2gzjyuj7d37i6el6xhrqpoeatdojtt6v4b3zzfp5a27ojva"
         metadata:
           ssh_authorized_keys: "{{ SSH_AUTHORIZED_KEYS }}"
