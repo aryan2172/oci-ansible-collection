@@ -11,8 +11,13 @@
         shape: "VM.Standard2.1"
         image_id: "ocid1.image.oc1.ap-mumbai-1.aaaaaaaaxivrzw4hhlpnq6jovofqqatez2oztq5zybpobypwivusbycextcq"
         name: test_instance
+        create_vnic_details:
+              assign_public_ip: True
+              hostname_label: "test_instance"
+              subnet_id: "ocid1.subnet.oc1.ap-mumbai-1.aaaaaaaagm6mo2gzjyuj7d37i6el6xhrqpoeatdojtt6v4b3zzfp5a27ojva"
         metadata:
           ssh_authorized_keys: "/tmp/ansible.tr53bfrmcert/public_key.pem"
+        
       register: result
 
     - name: Print instance details
