@@ -1,0 +1,22 @@
+- name: Launch a compute instance and connect to it using SSH
+  hosts: localhost
+  collections:
+    - oracle.oci
+  tasks:
+    - name: Create instance
+      oci_compute_instance:
+        # required
+        availability_domain: "mdyj:AP-MUMBAI-1-AD-1"
+        compartment_id: "ocid1.tenancy.oc1..aaaaaaaavckgsm4vr3ydgjl27kccvhq5umrx5juhtvppoidxt3j3yenpgtta"
+        shape: "VM.Standard2.1"
+        image_id: "ocid1.image.oc1.ap-mumbai-1.aaaaaaaaxivrzw4hhlpnq6jovofqqatez2oztq5zybpobypwivusbycextcq"
+        name: test_instance
+        metadata:
+          ssh_authorized_keys: "/tmp/ansible.tr53bfrmcert/public_key.pem"
+      register: result
+
+    - name: Print instance details
+      debug:
+        msg: "Launched a new instance {{ result }}"
+    - set_fact:
+        instance_id: "{{result.instance.id }}"

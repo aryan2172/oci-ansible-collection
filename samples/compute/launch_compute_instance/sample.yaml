@@ -126,7 +126,7 @@
         debug:
           msg: "SSH response from instance -> {{ result.stdout_lines }}"
 
-      - import_tasks: teardown.yaml
+      # - import_tasks: teardown.yaml
 
       rescue:
 
